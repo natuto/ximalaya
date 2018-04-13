@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:orientation="horizontal"
+                                   android:gravity="center_vertical"
+                                   android:layout_marginTop="@dimen/x10"
+                                   android:layout_marginBottom="@dimen/x3"
+                                   android:padding="@dimen/x2"
+                                   >
+
+    <ImageView
+        android:id="@+id/iv_tilte_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/host_theme_ic_title_bar_message"
+        android:layout_marginLeft="@dimen/x55"
+        android:layout_marginRight="@dimen/x50"
+        />
+
+    <RelativeLayout
+        android:layout_width="@dimen/x400"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@drawable/host_bg_navi_search">
+
+        <TextView
+             android:layout_marginLeft="@dimen/x15"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_toobar_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="易中天说禅| 读品....."
+            android:textColor="@color/search_text_color"
+            android:drawablePadding="@dimen/x2"
+            android:drawableLeft="@drawable/host_theme_ic_home_page_search_small"/>
+
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/iv_toobar_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/x45"
+        android:layout_marginLeft="@dimen/x40"
+        android:src="@drawable/host_theme_ic_title_bar_history"/>
+    <ImageView
+        android:id="@+id/iv_toobar_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/host_theme_ic_title_bar_download"/>
+</LinearLayout>

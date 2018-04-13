@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ximalaya</string>
+    <string name="home">首页</string>
+    <string name="woting">我听</string>
+    <string name="faxian">发现</string>
+    <string name="wode">我的</string>
+    <string name="kuaibao">快报</string>
 </resources>

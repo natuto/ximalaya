@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:background="@color/line_bg"
+    android:layout_above="@id/ll_tab_bottom"
+    />
+<LinearLayout
+    android:layout_alignParentBottom="true"
+    android:id="@+id/ll_tab_bottom"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <RadioGroup
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:checkedButton="@+id/rbHome">
+        <RadioButton
+            android:id="@+id/rbHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawablePadding="4dp"
+            android:text="@string/home"
+            android:textSize="12sp"
+            android:textColor="@color/tab_text_color"
+            android:drawableTop="@drawable/btn_tabbar_home_selector"/>
+        <RadioButton
+            android:id="@+id/rbWoting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawablePadding="4dp"
+            android:text="@string/woting"
+            android:textSize="12sp"
+            android:textColor="@color/tab_text_color"
+            android:drawableTop="@drawable/btn_tabbar_woting_selector"/>
+        <RadioButton
+            android:id="@+id/rbBofan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawablePadding="4dp"
+            android:visibility="invisible"
+            />
+        <RadioButton
+            android:id="@+id/rbFanxian"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawablePadding="4dp"
+            android:text="@string/faxian"
+            android:textSize="12sp"
+            android:textColor="@color/tab_text_color"
+            android:drawableTop="@drawable/btn_tabbar_faxian_selector"/>
+        <RadioButton
+            android:id="@+id/rbWode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawablePadding="4dp"
+            android:text="@string/wode"
+            android:textSize="12sp"
+            android:textColor="@color/tab_text_color"
+            android:drawableTop="@drawable/btn_tabbar_wode_selector"/>
+
+    </RadioGroup>
+</LinearLayout>
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/iv_start"
+    android:background="@drawable/host_theme_global_play_bg"
+    android:src="@drawable/host_theme_global_play_pause"
+    />
+
+</RelativeLayout>
+
