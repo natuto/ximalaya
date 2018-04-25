@@ -19,5 +19,7 @@ public interface HomeContract {
   }
   interface Model extends BaseModel {
       Observable<Ximalayabaen> getData();
+     //Observable<Ximalayabaen> getData(long time);
+
   }
 }

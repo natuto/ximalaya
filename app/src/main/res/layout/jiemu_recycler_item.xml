@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/y20"
+        >
+    <TextView
+        android:paddingLeft="@dimen/x20"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/tv_order"
+        android:textSize="10sp"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+       />
+    <LinearLayout
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x60"
+        android:id="@+id/ll_item"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/black"
+          android:textSize="16sp"
+          android:lines="2"
+          android:ellipsize="end"
+          android:layout_marginTop="@dimen/y5"
+          android:id="@+id/tv_title"/>
+        <LinearLayout
+            android:layout_marginTop="@dimen/y15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:drawableLeft="@drawable/ic_item_playtimes_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="9sp"
+                android:id="@+id/tv_playcount"/>
+            <TextView
+                android:drawableLeft="@drawable/ic_item_duration"
+            android:layout_marginLeft="@dimen/x15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:textSize="9sp"
+            android:id="@+id/tv_duration"/>
+            <TextView
+                android:drawableLeft="@drawable/bg_myitem_comments_new"
+                android:layout_marginLeft="@dimen/x15"
+                android:padding="5dp"
+                android:textSize="9sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_comments"/>
+            <TextView
+                android:layout_marginLeft="@dimen/x15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_play_time"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="right"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="@dimen/x120"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="@dimen/y5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_createdAt"
+            android:textSize="10sp"
+
+            />
+        <ImageView
+
+            android:layout_marginTop="@dimen/y40"
+            android:background="@drawable/image_download_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/_iv_download"/>
+
+
+    </LinearLayout>
+</LinearLayout>

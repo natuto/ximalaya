@@ -1,6 +1,7 @@
 package com.lws.ximalaya.peresenter;
 
 import com.lws.ximalaya.base.BasePresenter;
+import com.lws.ximalaya.bean.GarhetMoreBean;
 import com.lws.ximalaya.bean.GatherBean;
 import com.lws.ximalaya.bean.Ximalayabaen;
 import com.lws.ximalaya.contract.HomeContract;
@@ -24,28 +25,50 @@ import io.reactivex.schedulers.Schedulers;
 public class HomegatherPresenter extends BasePresenter <HomeGatherContract.View>implements HomeGatherContract.Presenter {
 
     private HomeGatherModel mHomeModel;
-
+    private int page=1;
     public HomegatherPresenter() {
         mHomeModel = new HomeGatherModel();
     }
 
     @Override
     public void getLatest(int id ) {
-        mHomeModel.getData(id, 1).subscribeOn(Schedulers.io())
+        page=1;
+        mHomeModel.getData(id, page).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<GatherBean>() {
                     @Override
                     public void accept(GatherBean gatherBean) throws Exception {
 
 
-                        view.showLoading(gatherBean,false );
+                        view.showLoading(gatherBean,true);
                     }
                 });
 
     }
 
     @Override
-    public void getMore(int id ,int page) {
+    public void getMore(int id ,int pa) {
+
+
+
+        mHomeModel.getMoreData(id, pa).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<GarhetMoreBean>() {
+                    @Override
+                    public void accept(GarhetMoreBean garhetMoreBean) throws Exception {
+
+
+
+                        view.showLoading(garhetMoreBean,false );
+
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+
+                    }
+                });
+
 
     }
 }

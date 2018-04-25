@@ -26,10 +26,10 @@ import com.lws.ximalaya.contract.HomeContract;
 import com.lws.ximalaya.peresenter.HomePresenter;
 
 import com.lws.ximalaya.ui.adapter.FragmentAdaper;
-import com.lws.ximalaya.ui.adapter.HomeRecycleAdapter;
 import com.lws.ximalaya.ui.adapter.HomeRecyclerViewAdaper;
 import com.lws.ximalaya.ui.adapter.MyBanner;
 import com.lws.ximalaya.ui.message.MessageCategory;
+import com.orhanobut.logger.Logger;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -39,10 +39,9 @@ import com.youth.banner.listener.OnBannerListener;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+
 import java.util.List;
-import java.util.logging.Logger;
+
 
 
 import butterknife.BindView;
@@ -68,7 +67,7 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
 
    private List<String> mListImage ;
    private List<BaseFragment> mFragments;
-   private int i;
+   private int p =0;
    private boolean isText =true;
    //内存泄漏　不推荐这样写
    private Handler mHandler = new Handler(){
@@ -82,6 +81,7 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
 
     private List<Ximalayabaen.ListBeanX> mXList;
     private HomeRecyclerViewAdaper mHomeRecyclerViewAdaper;
+    private Thread mThread;
 
 
     public  static HomeFragment getInstance(){
@@ -104,6 +104,20 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
     protected void initData() {
 
         mPresenter.getLatest();
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+         isText =true;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+      isText =false;
 
     }
 
@@ -143,7 +157,7 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
 
             }
 
-            for (i = 4; i < 13 ; i++) {
+            for (int i = 4; i < 13 ; i++) {
                 if (ximalayabaen.getList().get(i).getList().size() > 0 ){
                     if ( !ximalayabaen.getList().get(i).getModuleType().equals("playlist")) {
                     mXList.add(ximalayabaen.getList().get(i));
@@ -176,29 +190,30 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
         mBanner.start();
     }
     public void textSwitcherThread(final Ximalayabaen ximalayabaen){
-         final Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                int i=0;
-                while (isText){
-                    Message message = Message.obtain();
+        mThread = new Thread(new Runnable() {
+           @Override
+           public void run() {
+               int i=0;
+               while (isText){
+                   Message message = Message.obtain();
 
-                    message.obj = ximalayabaen.getList().get(2).getList().get(i).getTitle();
-                    mHandler.sendMessage(message);
-                    if ( i==2){
-                        i=0;
-                    }
-                    i++;
+                   message.obj = ximalayabaen.getList().get(2).getList().get(i).getTitle();
+                   mHandler.sendMessage(message);
+                   if ( i==2){
+                       i=0;
+                   }
+                   i++;
 
-                    SystemClock.sleep(3000);
+                   SystemClock.sleep(4000);
 
 
 
-                }
+               }
 
-            }
-        });
-         thread.start();
+           }
+       });
+        mThread.start();
+
     }
 
     @Override
@@ -246,9 +261,10 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
 
     @Override
     public void onPageSelected(int position) {
-        mLinearLayout.getChildAt(i).setEnabled(false);
+
+        mLinearLayout.getChildAt(p).setEnabled(false);
         mLinearLayout.getChildAt(position).setEnabled(true);
-        i = position;
+        p = position;
 
     }
 

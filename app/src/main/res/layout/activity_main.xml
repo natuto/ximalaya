@@ -28,7 +28,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp"
+            android:padding="3dp"
             android:checkedButton="@+id/rbHome">
             <RadioButton
                 android:id="@+id/rbHome"
@@ -91,6 +91,16 @@
 
         </RadioGroup>
     </LinearLayout>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_round"
+        android:visibility="invisible"
+        android:src="@drawable/round"
+        android:layout_marginBottom="@dimen/y20"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+       />
        <ImageView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"

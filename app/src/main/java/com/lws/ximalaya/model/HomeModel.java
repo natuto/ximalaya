@@ -5,6 +5,7 @@ import com.lws.ximalaya.api.Ximalaya;
 import com.lws.ximalaya.bean.Ximalayabaen;
 import com.lws.ximalaya.contract.HomeContract;
 import com.lws.ximalaya.utils.RetrofitUtils;
+import com.lws.ximalaya.utils.TimeUtils;
 
 import io.reactivex.Observable;
 
@@ -14,8 +15,12 @@ import io.reactivex.Observable;
 public class HomeModel implements HomeContract.Model {
 
 
-    @Override
+   /* @Override
     public Observable<Ximalayabaen> getData() {
         return RetrofitUtils.createApi(Ximalaya.class, Constants.HOST).getXimalaya();
+    }*/
+     @Override
+    public Observable<Ximalayabaen> getData() {
+        return RetrofitUtils.createApi(Ximalaya.class, Constants.HOST).getXimalaya(TimeUtils.getTimesamp());
     }
 }

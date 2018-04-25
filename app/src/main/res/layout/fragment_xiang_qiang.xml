@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_marginTop="@dimen/y30"
+       android:layout_marginLeft="@dimen/x40"
+       android:layout_marginRight="@dimen/x40"
+       android:layout_marginBottom="@dimen/y50"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <TextView
+           android:text="内容简介"
+           android:textSize="18sp"
+           android:textColor="@color/black"
+           android:layout_marginBottom="@dimen/y25"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           />
+       <TextView
+           android:id="@+id/tv_intro"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/y40"
+        android:layout_marginLeft="@dimen/x40"
+        android:layout_marginRight="@dimen/x40"
+        android:layout_marginBottom="@dimen/y10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:textSize="16sp"
+            android:text="主播介绍"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/y25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:padding="3dp"
+                android:id="@+id/iv_smallLogo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"/>
+           <RelativeLayout
+               android:layout_marginLeft="@dimen/x20"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:textSize="18sp"
+                   android:id="@+id/tv_name"
+                   android:textColor="@color/black"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <ImageView
+
+                   android:layout_marginLeft="@dimen/x10"
+                   android:layout_marginTop="@dimen/y10"
+                   android:layout_toRightOf="@+id/tv_name"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/iv_v"/>
+               <TextView
+                   android:layout_marginTop="@dimen/y15"
+                   android:textSize="9sp"
+                   android:layout_below="@+id/tv_name"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/tv_followers"/>
+           </RelativeLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="@dimen/y40"
+            android:id="@+id/tv_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+</ScrollView>

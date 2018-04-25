@@ -23,6 +23,6 @@ public class WodeFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.titl3,container,false);
+        return inflater.inflate(R.layout.xiangsi_framgnet,container,false);
     }
 }

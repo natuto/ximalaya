@@ -2,6 +2,7 @@ package com.lws.ximalaya.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.lws.ximalaya.R;
 import com.lws.ximalaya.bean.Ximalayabaen;
 import com.lws.ximalaya.ui.activity.GatherDetailActivity;
 import com.lws.ximalaya.utils.AmountUtils;
+import com.orhanobut.logger.Logger;
 
 import java.util.List;
 
@@ -86,12 +88,17 @@ public class ItemRecyclerViewAdaper  extends RecyclerView.Adapter<RecyclerView.V
         mSubTitle.setText(mListBeans.get(position).getSubtitle());
         mCount.setText(AmountUtils.getAmount(mListBeans.get(position).getPlayCount()) );
         mTracks.setText(mListBeans.get(position).getTracksCount()+"集");
+
         Glide.with(mContext).load(mListBeans.get(position).getPic()).into(mImageView);
             mLinearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(mContext, GatherDetailActivity.class);
-                    intent.putExtra("id",mListBeans.get(position).getAlbumId() );
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("id", mListBeans.get(position).getAlbumId());
+                    bundle.putInt("track", mListBeans.get(position).getTracksCount());
+                    bundle.putString("count", AmountUtils.getAmount(mListBeans.get(position).getPlayCount()));
+                    intent.putExtra("data",bundle);
                     mContext.startActivity(intent);
                 }
             });

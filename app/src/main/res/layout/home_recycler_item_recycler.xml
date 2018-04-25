@@ -44,9 +44,11 @@
             android:layout_marginTop="@dimen/y8"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:src="@drawable/item_plays_count"/>
+                android:layout_gravity="center_vertical"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginRight="@dimen/x5"
+                android:src="@drawable/conut_play"/>
             <TextView
                 android:id="@+id/tv_count"
                 android:layout_width="wrap_content"

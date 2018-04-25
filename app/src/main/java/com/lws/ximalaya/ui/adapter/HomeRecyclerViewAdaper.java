@@ -15,6 +15,7 @@ import com.lws.ximalaya.R;
 import com.lws.ximalaya.bean.Ximalayabaen;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -82,7 +83,6 @@ public class HomeRecyclerViewAdaper extends RecyclerView.Adapter<RecyclerView.Vi
         }
         public void bindItem(final int position){
             mTitle.setText(mList.get(position).getTitle());
-
             mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
             mRecyclerView.addItemDecoration(new DividerItemDecoration(mContext,DividerItemDecoration.VERTICAL));
             mRecyclerView.setAdapter(new ItemRecyclerViewAdaper(mContext,mList.get(position).getList()));
