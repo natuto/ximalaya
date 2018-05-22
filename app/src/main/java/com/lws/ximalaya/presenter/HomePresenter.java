@@ -1,4 +1,4 @@
-package com.lws.ximalaya.peresenter;
+package com.lws.ximalaya.presenter;
 
 import com.lws.ximalaya.base.BasePresenter;
 import com.lws.ximalaya.bean.Ximalayabaen;

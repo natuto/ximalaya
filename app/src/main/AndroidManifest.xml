@@ -11,25 +11,30 @@
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_ting"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/status_toolbar_color">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".ui.activity.GatherDetailActivity"/>
+        <activity
+            android:name=".ui.activity.PlayDetailActivity"
+            android:launchMode="singleInstance">
+        </activity>
+
+        <service android:name=".service.MediaService"/>
+
+        <activity android:name=".ui.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".ui.activity.GatherDetailActivity"/>
-        <activity android:name=".ui.activity.PlayDetailActivity"
-                  android:launchMode="singleInstance"
-                  >
-        </activity>
 
-        <service android:name=".service.MediaService"/>
+        </activity>
     </application>
 
 </manifest>

@@ -1,19 +1,12 @@
-package com.lws.ximalaya.peresenter;
+package com.lws.ximalaya.presenter;
 
 import com.lws.ximalaya.base.BasePresenter;
 import com.lws.ximalaya.bean.GarhetMoreBean;
 import com.lws.ximalaya.bean.GatherBean;
-import com.lws.ximalaya.bean.Ximalayabaen;
-import com.lws.ximalaya.contract.HomeContract;
 import com.lws.ximalaya.contract.HomeGatherContract;
 import com.lws.ximalaya.model.HomeGatherModel;
-import com.lws.ximalaya.model.HomeModel;
-import com.orhanobut.logger.Logger;
 
 ;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;

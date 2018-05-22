@@ -1,45 +1,35 @@
 package com.lws.ximalaya.ui.activity;
 
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.TypedValue;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.lws.ximalaya.R;
-import com.lws.ximalaya.base.BaseFragment;
 import com.lws.ximalaya.base.BaseMVPActivity;
 import com.lws.ximalaya.bean.GatherBean;
 
 import com.lws.ximalaya.contract.HomeGatherContract;
 
-import com.lws.ximalaya.peresenter.HomegatherPresenter;
+import com.lws.ximalaya.presenter.HomegatherPresenter;
 import com.lws.ximalaya.ui.adapter.GatherFragmentAdaper;
 import com.lws.ximalaya.ui.fragment.JiemuFragment;
 import com.lws.ximalaya.ui.fragment.XiangqingFragment;
 import com.lws.ximalaya.ui.fragment.XiangsiFragment;
-import com.lws.ximalaya.ui.message.MessageCategory;
 import com.lws.ximalaya.ui.message.MessageJiemu;
 import com.lws.ximalaya.ui.message.MessageXiangqing;
-import com.lws.ximalaya.utils.AmountUtils;
 import com.lws.ximalaya.utils.TimeUtils;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 

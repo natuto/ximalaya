@@ -2,6 +2,7 @@ package com.lws.ximalaya.ui.fragment;
 
 
 import android.graphics.Typeface;
+import android.os.Environment;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.view.ViewPager;
@@ -23,12 +24,13 @@ import com.lws.ximalaya.base.BaseFragment;
 import com.lws.ximalaya.base.BaseMVPFragment;
 import com.lws.ximalaya.bean.Ximalayabaen;
 import com.lws.ximalaya.contract.HomeContract;
-import com.lws.ximalaya.peresenter.HomePresenter;
+import com.lws.ximalaya.presenter.HomePresenter;
 
 import com.lws.ximalaya.ui.adapter.FragmentAdaper;
 import com.lws.ximalaya.ui.adapter.HomeRecyclerViewAdaper;
 import com.lws.ximalaya.ui.adapter.MyBanner;
 import com.lws.ximalaya.ui.message.MessageCategory;
+import com.lws.ximalaya.utils.TimeUtils;
 import com.orhanobut.logger.Logger;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -38,6 +40,8 @@ import com.youth.banner.listener.OnBannerListener;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -45,6 +49,11 @@ import java.util.List;
 
 
 import butterknife.BindView;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 /**
@@ -103,6 +112,26 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
     @Override
     protected void initData() {
 
+        for (int ii = 0;ii< 50 ;ii++) {  OkHttpClient okHttpClient  = new OkHttpClient(); Request request =  new Request.Builder().url("https://www.iesdouyin.com/share/video/6550310617499045133/?region=CN&mid=6550310779705363204&titleType=title&timestamp=1525952397&utm_campaign=client_share&app=aweme&utm_medium=ios&iid=30392067103&utm_source=copy")
+                .build();
+            Call call = okHttpClient.newCall(request);
+            call.enqueue(new Callback() {
+
+                @Override
+                public void onFailure(Call call, IOException e) {
+
+                }
+
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    Logger.d(response.body().string());
+
+
+                }
+            });
+        }
+
         mPresenter.getLatest();
 
     }
@@ -159,8 +188,13 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
 
             for (int i = 4; i < 13 ; i++) {
                 if (ximalayabaen.getList().get(i).getList().size() > 0 ){
-                    if ( !ximalayabaen.getList().get(i).getModuleType().equals("playlist")) {
-                    mXList.add(ximalayabaen.getList().get(i));
+                    if  (!ximalayabaen.getList().get(i).getModuleType().equals("playlist")) {
+                        if (!ximalayabaen.getList().get(i).getTitle().equals("懒人一键听")) {
+                            mXList.add(ximalayabaen.getList().get(i));
+                           // Logger.d(ximalayabaen.getList().get(i).getTitle());
+                        }
+
+
                     }
 
                 }

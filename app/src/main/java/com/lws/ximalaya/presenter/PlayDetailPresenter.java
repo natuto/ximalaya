@@ -1,11 +1,8 @@
-package com.lws.ximalaya.peresenter;
+package com.lws.ximalaya.presenter;
 
 import com.lws.ximalaya.base.BasePresenter;
-import com.lws.ximalaya.bean.GatherBean;
 import com.lws.ximalaya.bean.PlayDetailBean;
-import com.lws.ximalaya.contract.HomeGatherContract;
 import com.lws.ximalaya.contract.PlayDetailContract;
-import com.lws.ximalaya.model.HomeGatherModel;
 import com.lws.ximalaya.model.PlayDetailModel;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;

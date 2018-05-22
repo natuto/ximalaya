@@ -3,7 +3,6 @@ package com.lws.ximalaya.ui.activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.IBinder;
 
@@ -12,7 +11,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -22,13 +20,11 @@ import com.lws.ximalaya.base.BaseMVPActivity;
 import com.lws.ximalaya.bean.GarhetMoreBean;
 import com.lws.ximalaya.bean.PlayDetailBean;
 import com.lws.ximalaya.contract.PlayDetailContract;
-import com.lws.ximalaya.peresenter.PlayDetailPresenter;
+import com.lws.ximalaya.presenter.PlayDetailPresenter;
 import com.lws.ximalaya.service.MediaService;
-import com.orhanobut.logger.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
 

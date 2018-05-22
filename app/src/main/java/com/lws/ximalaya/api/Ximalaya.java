@@ -1,5 +1,6 @@
 package com.lws.ximalaya.api;
 
+import com.lws.ximalaya.bean.DiscoveryBean;
 import com.lws.ximalaya.bean.GarhetMoreBean;
 import com.lws.ximalaya.bean.GatherBean;
 import com.lws.ximalaya.bean.PlayDetailBean;
@@ -11,6 +12,7 @@ import java.util.Map;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
@@ -36,6 +38,9 @@ public interface Ximalaya {
     @GET("/mobile/track/v2/baseInfo/{t}?device=android")
     Observable<PlayDetailBean>  getPlayData (@Path("t") String time, @Query("trackId")int trackId);
 
+    @Headers("cookie: 1&_device=android&ffffffff-851a-ade5-ffff-ffffc33653ef&6.3.84")
+    @GET("http://140.207.215.242/discovery-stream-mobile/discoveryPage/wholeContent/fetchNewItems/{t}?")
+    Observable<DiscoveryBean> getDiscover(@Path("t") String time, @Query("channelId")int channelId);
 
 
 }

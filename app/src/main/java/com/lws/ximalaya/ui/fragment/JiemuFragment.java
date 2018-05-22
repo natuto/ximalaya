@@ -1,37 +1,22 @@
 package com.lws.ximalaya.ui.fragment;
 
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lws.ximalaya.R;
 import com.lws.ximalaya.base.BaseMVPFragment;
 import com.lws.ximalaya.bean.GarhetMoreBean;
-import com.lws.ximalaya.bean.GatherBean;
 import com.lws.ximalaya.contract.HomeGatherContract;
-import com.lws.ximalaya.peresenter.HomegatherPresenter;
-import com.lws.ximalaya.ui.activity.PlayDetailActivity;
+import com.lws.ximalaya.presenter.HomegatherPresenter;
 import com.lws.ximalaya.ui.adapter.GatherJiemuRecyclerAdaper;
-import com.lws.ximalaya.ui.message.MessageCategory;
 import com.lws.ximalaya.ui.message.MessageJiemu;
-import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 
