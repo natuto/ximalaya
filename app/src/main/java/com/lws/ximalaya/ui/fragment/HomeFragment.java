@@ -112,25 +112,6 @@ public class HomeFragment extends BaseMVPFragment<HomePresenter> implements Home
     @Override
     protected void initData() {
 
-        for (int ii = 0;ii< 50 ;ii++) {  OkHttpClient okHttpClient  = new OkHttpClient(); Request request =  new Request.Builder().url("https://www.iesdouyin.com/share/video/6550310617499045133/?region=CN&mid=6550310779705363204&titleType=title&timestamp=1525952397&utm_campaign=client_share&app=aweme&utm_medium=ios&iid=30392067103&utm_source=copy")
-                .build();
-            Call call = okHttpClient.newCall(request);
-            call.enqueue(new Callback() {
-
-                @Override
-                public void onFailure(Call call, IOException e) {
-
-                }
-
-
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    Logger.d(response.body().string());
-
-
-                }
-            });
-        }
 
         mPresenter.getLatest();
 
